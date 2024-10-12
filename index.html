@@ -11,13 +11,14 @@
             background-color: black;
             margin: 0;
             padding: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             font-family: Arial, sans-serif;
             position: relative;
+            overflow-x: hidden;
         }
 
        
@@ -36,6 +37,7 @@
             height: auto;
             margin-bottom: 40px;
             z-index: 2;
+            filter: drop-shadow(5px 5px 15px rgba(23, 221, 205, 1));
         }
 
         .search-box {
@@ -44,6 +46,7 @@
             display: flex;
             justify-content: center;
             z-index: 2;
+            box-shadow: 4px 4px 5px rgba(255,255,255,0.5);
         }
 
        
@@ -69,7 +72,13 @@
         .gcse-search input.gsc-search-button:hover {
             background-color: #f1c40f;
         }
-        footer {
+
+        .gsc-results-wrapper-visible {
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .footertextcredit {
             color: white;
         }
     </style>
@@ -84,7 +93,9 @@
         <div class="gcse-search"></div>
     </div>
     <footer>
+        <div class="footertextcredit">
         <a href="https://wallpapers.com/wallpapers/non-copyrighted-purple-space-giwyzcnvy9m2hvhm.html">Wallpaper by scblurr</a> on Wallpapers.com
+        </div>
     </footer>
 </body>
 </html>
