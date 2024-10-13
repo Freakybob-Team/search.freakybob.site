@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FreakySearch</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FreakySearch - A simple browser inside a browser">
+<meta content="FreakySearch" property="og:title" />
+<meta content="A simple 'browser inside a browser'! It has many features like searching, weather and much more!" property="og:description" />
+<meta content="Placeholder" property="og:image" />
+<meta content="#006b79" data-react-helmet="true" name="theme-color" />
+ <link rel="icon" type="image/x-icon" href="logo.ico">
+ <link rel="stylesheet" href="css/index.css">    
+</head>
+<body>
+
+    <div class="menu">
+        <a href="https://freakybob.site">Freakybob.site</a>
+        <a href="https://videos.freakybob.site" class="textnavbar">Videos</a>
+        <a href="https://blog.freakybob.site" class="textnavbar">Blog</a>
+        <a href="https://github.com/Freakybob-Team" class="textnavbar">GitHub</a>
+        <div id="clock" class="clock"></div>
+    </div>
+    <marquee>We have updated our <a href="pp">Privacy Policy</a>. By continuing to use this site, you agree to the new terms.</marquee>
+
+    <div class="overlay"></div>
+    <div class="top-overlay"></div>
+
+    
+    <div id="weather-modal" class="modal">
+        <h1>FreakyWeather</h1>
+        <input type="text" id="locationInput" placeholder="Enter a city, state (e.g., Los Angeles, CA)">
+        <button id="searchButton">Search</button>
+        <button id="geoButton">Use My Location</button>
+        <p>We use <a href="https://openweathermap.org/">https://openweathermap.org/</a> to provide this service.</p>
+        <div class="weather-info">
+            <img id="weatherIcon" class="weather-icon" src="" alt="Weather Icon" style="display: none;">
+            <h2 id="location"></h2>
+            <p id="temperature"></p>
+            <p id="description"></p>
+            <p id="humidity"></p>
+            <p id="wind"></p>
+            <p id="errorMessage" class="error"></p>
+            <p id="loading" class="loading">Loading...</p>
+            <button class="close-btn">Close</button>
+        </div>
+        
+    </div>
+
+    
+    <div id="credits-modal" class="modal">
+        <h2>Credits</h2>
+        <p>Background image: scblurr on Wallpapers.com</p>
+        <button class="close-btn">Close</button>
+    </div>
+
+  
+    <div id="about-modal" class="modal">
+        <h2>About</h2>
+        <p>FreakySearch 1.4</p>
+        <p>Last revision date: October 13th, 2024</p>
+     <br>
+     <h2>Configurations</h2>
+     <p>No items!</p>
+        <button class="close-btn">Close</button>
+    </div>
+
+    
+    <img src="logo.webp" alt="FreakySearch Logo" id="logo">
+
+    
+    <div class="search-box">
+        <script async src="https://cse.google.com/cse.js?cx=91650286aa42a4a77"></script>
+        <div class="gcse-search"></div>
+    </div>
+
+  
+    <div class="options">
+        <a href="#weather" class="weathera">Weather</a>
+        <a href="#credits" class="creditsa">Credits</a>
+        <a href="#about" class="abouta">About</a>
+    </div>
+
+    <div class="button-container">
+        <button id="prev-button"><</button>
+        <button id="next-button">></button>
+    </div>
+    <p class="privacy">Our Privacy Policy is listed <a href="privacy">here</a>. By using anything on this webpage, you agree to these terms.</p>
+    <script src="js/index.js"></script>
+<!--I absulutly cooked at the weather stuff. Everyone should now gibe me a cookie cause I am fatass! -Squirrel-->
+<!-- here, take it! 🍪 - wish-->
+</body>
+</html>
+
