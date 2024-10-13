@@ -81,10 +81,42 @@
         .footertextcredit {
             color: white;
         }
+                .menu {
+    background-color: rgb(46, 46, 46);
+    width: 100%;
+    height: 30px;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 3; 
+    display: flex; 
+    align-items: center;
+    color: white;
+    padding-left: 30px;
+    font-size: 14px;
+}
+.textnavbar {
+    padding-left: 20px
+}
+.menu a, .menu a:link, .menu a:visited {
+    text-decoration: none;
+    color: white;
+}
+.menu a:hover {
+    text-decoration: underline;
+}
+        .privacy {
+            color: white;
+        }
     </style>
 </head>
 <body>
-   
+       <div class="menu">
+        <a href="https://freakybob.site">Freakybob.site</a>
+        <a href="https://videos.freakybob.site" class="textnavbar">Videos</a>
+        <a href="https://blog.freakybob.site" class="textnavbar">Blog</a>
+        <a href="https://github.com/Freakybob-Team" class="textnavbar">Github</a>
+    </div>
     <div class="overlay"></div>
 
     <img src="logo.webp" alt="FreakySearch Logo" id="logo">
@@ -97,6 +129,6 @@
         <a href="https://wallpapers.com/wallpapers/non-copyrighted-purple-space-giwyzcnvy9m2hvhm.html">Wallpaper by scblurr</a> on Wallpapers.com
         </div>
     </footer>
-    <p>Our Privacy Policy is listed on pp.html. By searching anything, you agree to these terms.</p>
+    <p class="privacy">Our Privacy Policy is listed on pp.html. By searching anything, you agree to these terms.</p>
 </body>
 </html>
