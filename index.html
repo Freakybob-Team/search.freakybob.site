@@ -421,16 +421,46 @@
 
     
     <script>
-        const body = document.body;
-
-
+const body = document.body;
 const backgrounds = [
     "bg.png",
     "idk.jpg",
     "ocean.jpg"
 ];
 
-let currentIndex = 0; 
+let currentIndex = 0;
+
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "; expires=" + date.toUTCString();
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+const savedIndex = getCookie('backgroundIndex');
+if (savedIndex) {
+    currentIndex = parseInt(savedIndex);
+    body.style.backgroundImage = `url(${backgrounds[currentIndex]})`;
+} else {
+    body.style.backgroundImage = `url(${backgrounds[currentIndex]})`;
+}
+
+function changeBackground() {
+    currentIndex = (currentIndex + 1) % backgrounds.length;
+    body.style.backgroundImage = `url(${backgrounds[currentIndex]})`;
+    setCookie('backgroundIndex', currentIndex, 7);
+}
 
             function updateClock() {
     const now = new Date();
