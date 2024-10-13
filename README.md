@@ -5,6 +5,9 @@ The website is powered by google which makes it easy to find anything! You can s
 
 The website is still being updated to make it more easy and comforting for you to use!
 
+# Update 1.4
+- Added full weather capabilities, as well as a basic mobile website.
+
 *this was originaly made for freakybrowser which was discontinued.*
 
 <img src="images/screenshots/2024-10-12.png">
