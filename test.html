@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FreakySearch</title>
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <style>
+        body {
+            background-image: url("bg.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow-x: hidden;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 400px;
+            padding: 20px 30px;
+            background-color: rgb(29, 29, 29);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 101;
+            text-align: left;
+            color: white;
+            overflow-y: auto; 
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .overlay.active {
+            display: block; 
+        }
+
+        .top-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 100; 
+            display: none;
+        }
+
+        .top-overlay.active {
+            display: block;
+        }
+
+        .close-btn {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #logo {
+            width: 140px;
+            height: auto;
+            margin-bottom: 40px;
+            z-index: 2;
+            filter: drop-shadow(5px 5px 15px rgba(23, 221, 205, 1));
+        }
+
+        .search-box {
+            width: 600px;
+            margin-bottom: 40px;
+            justify-content: center;
+            z-index: 2;
+            box-shadow: 4px 4px 5px rgba(255,255,255,0.5);
+        }
+
+        .gcse-search input.gsc-input {
+            padding: 12px 20px;
+            font-size: 18px;
+            border-radius: 24px;
+            border: 2px solid yellow;
+            outline: none;
+        }
+
+        .gcse-search input.gsc-search-button {
+            padding: 12px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 24px;
+            background-color: yellow;
+            color: black;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .gcse-search input.gsc-search-button:hover {
+            background-color: #f1c40f;
+        }
+
+        .gsc-results-wrapper-visible {
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        #footertext {
+            color: white;
+            z-index: 2;
+        }
+
+        .menu {
+            background-color: rgb(46, 46, 46);
+            width: 100%;
+            height: 30px;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            z-index: 3; 
+            display: flex; 
+            align-items: center;
+            color: white;
+            padding-left: 30px;
+            font-size: 14px;
+        }
+
+        .textnavbar {
+            padding-left: 20px
+        }
+
+        .menu a, .menu a:link, .menu a:visited {
+            text-decoration: none;
+            color: white;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
+
+        .privacy {
+            color: white;
+            z-index: 2;
+        }
+
+        .options {
+            display: flex;
+            gap: 20px;
+        }
+
+        .weathera, .creditsa, .abouta {
+            padding-bottom: 20px;
+            z-index: 2;
+            text-decoration: none;
+            color: white;
+        }
+
+        .weathera:hover, .creditsa:hover, .abouta:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <a href="https://freakybob.site">Freakybob.site</a>
+        <a href="https://videos.freakybob.site" class="textnavbar">Videos</a>
+        <a href="https://blog.freakybob.site" class="textnavbar">Blog</a>
+        <a href="https://github.com/Freakybob-Team" class="textnavbar">Github</a>
+    </div>
+    <div class="overlay"></div>
+    <div class="top-overlay"></div>
+
+    <div id="weather-modal" class="modal">
+        <h1>Weather App</h1>
+        <input type="text" id="locationInput" placeholder="Enter a city.">
+        <button id="searchButton">Search</button>
+        <button id="geoButton">Use My Location</button>
+        <div class="weather-info">
+            <img id="weatherIcon" class="weather-icon" src="" alt="" style="display: none;">
+            <h2 id="location"></h2>
+            <p id="temperature"></p>
+            <p id="description"></p>
+            <p id="humidity"></p>
+            <p id="wind"></p>
+            <p id="errorMessage" class="error"></p>
+            <p id="loading" class="loading" style="display: none;">Loading...</p>
+        </div>
+        <button class="close-btn">Close</button>
+    </div>
+
+    <div id="credits-modal" class="modal">
+        <h2>Credits...</h2>
+        <p>...</p>
+        <button class="close-btn">Close</button>
+    </div>
+
+    <script>
+        const apiKey = '9fb72ce4a247b16999ba8df85db1b357';
+        const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+
+        const locationInput = document.getElementById('locationInput');
+        const searchButton = document.getElementById('searchButton');
+        const geoButton = document.getElementById('geoButton');
+        const locationElement = document.getElementById('location');
+        const temperatureElement = document.getElementById('temperature');
+        const descriptionElement = document.getElementById('description');
+        const humidityElement = document.getElementById('humidity');
+        const windElement = document.getElementById('wind');
+        const errorMessage = document.getElementById('errorMessage');
+        const loadingElement = document.getElementById('loading');
+        const weatherIcon = document.getElementById('weatherIcon');
+
+        searchButton.addEventListener('click', () => {
+            const location = locationInput.value.trim();
+            if (location) {
+                fetchWeather(location);
+            } else {
+                displayError('Please enter a city and state.');
+            }
+        });
+
+        locationInput.addEventListener('keyup', (event) => {
+            if (event.key === 'Enter') {
+                searchButton.click();
+            }
+        });
+
+        geoButton.addEventListener('click', () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    position => {
+                        const { latitude, longitude } = position.coords;
+                        fetchWeatherByCoords(latitude, longitude);
+                    },
+                    error => {
+                        switch (error.code) {
+                            case error.PERMISSION_DENIED:
+                                displayError('User denied the request for Geolocation.');
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                displayError('Location information is unavailable.');
+                                break;
+                            case error.TIMEOUT:
+                                displayError('The request to get user location timed out.');
+                                break;
+                            case error.UNKNOWN_ERROR:
+                                displayError('An unknown error occurred.');
+                                break;
+                        }
+                    }
+                );
+            } else {
+                displayError('Geolocation is not supported by your browser.');
+            }
+        });
+
+        function fetchWeather(location) {
+            const url = `${apiUrl}?q=${encodeURIComponent(location)}&appid=${apiKey}&units=imperial`; 
+
+            showLoading();
+            clearWeatherInfo();
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('City not found');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    hideLoading();
+                    displayWeather(data);
+                })
+                .catch(error => {
+                    hideLoading();
+                    displayError(error.message);
+                });
+        }
+
+        function fetchWeatherByCoords(lat, lon) {
+            const url = `${apiUrl}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`; 
+
+            showLoading();
+            clearWeatherInfo();
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Could not fetch weather data');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    hideLoading();
+                    displayWeather(data);
+                })
+                .catch(error => {
+                    hideLoading();
+                    displayError(error.message);
+                });
+        }
+
+        function displayWeather(data) {
+            const { name, main, weather, wind } = data;
+            locationElement.textContent = name;
+            temperatureElement.textContent = `Temperature: ${main.temp} °F`;
+            descriptionElement.textContent = `Description: ${weather[0].description}`;
+            humidityElement.textContent = `Humidity: ${main.humidity}%`;
+            windElement.textContent = `Wind Speed: ${wind.speed} mph`;
+
+            const iconCode = weather[0].icon;
+            weatherIcon.src = `https://openweathermap.org/img/wn/${iconCode}.png`;
+            weatherIcon.style.display = 'block';
+        }
+
+        function displayError(message) {
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+        }
+
+        function clearWeatherInfo() {
+            locationElement.textContent = '';
+            temperatureElement.textContent = '';
+            descriptionElement.textContent = '';
+            humidityElement.textContent = '';
+            windElement.textContent = '';
+            errorMessage.style.display = 'none';
+            weatherIcon.style.display = 'none';
+        }
+
+        function showLoading() {
+            loadingElement.style.display = 'block';
+        }
+
+        function hideLoading() {
+            loadingElement.style.display = 'none';
+        }
+
+        const weatherModal = document.getElementById('weather-modal');
+        const overlay = document.querySelector('.overlay');
+        const closeBtns = document.querySelectorAll('.close-btn');
+
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                weatherModal.classList.remove('active');
+                overlay.classList.remove('active');
+                clearWeatherInfo(); 
+            });
+        });
+
+        document.getElementById('weather-button').addEventListener('click', () => {
+            weatherModal.classList.add('active');
+            overlay.classList.add('active');
+        });
+    </script>
+</body>
+</html>
