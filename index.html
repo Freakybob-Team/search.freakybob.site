@@ -110,6 +110,21 @@
             color: white;
             z-index: 2;
         }
+                .options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .weathera, .creditsa, .abouta {
+            padding-bottom: 20px;
+            z-index: 2;
+            text-decoration: none;
+            color: white;
+        }
+
+        .weathera:hover, .creditsa:hover, .abouta:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -120,17 +135,80 @@
         <a href="https://github.com/Freakybob-Team" class="textnavbar">Github</a>
     </div>
     <div class="overlay"></div>
+    <div class="top-overlay"></div>
+
+    <div id="weather-modal" class="modal">
+        <h2>Weather</h2>
+        <p>This feature is still work in progress.</p>
+        <button class="close-btn">Close</button>
+    </div>
+
+    <div id="credits-modal" class="modal">
+        <h2>Credits</h2>
+        <p>Background image: scblurr on Wallpapers.com</p>
+        <button class="close-btn">Close</button>
+    </div>
+
+    <div id="about-modal" class="modal">
+        <h2>About</h2>
+        <p>FreakySearch 1.2</p>
+        <p>Last revision date: October 12th, 2024</p>
+        <button class="close-btn">Close</button>
+    </div>
 
     <img src="logo.webp" alt="FreakySearch Logo" id="logo">
     <div class="search-box">
         <script async src="https://cse.google.com/cse.js?cx=91650286aa42a4a77"></script>
         <div class="gcse-search"></div>
     </div>
-   
-        
-        <p id="footertext" class="footertext"><a href="https://wallpapers.com/wallpapers/non-copyrighted-purple-space-giwyzcnvy9m2hvhm.html">Wallpaper by scblurr</a> on Wallpapers.com</p>
-        
-    
+
+        <div class="options">
+        <a href="#weather" class="weathera">Weather</a>
+        <a href="#credits" class="creditsa">Credits</a>
+        <a href="#about" class="abouta">About</a>
+    </div>
+
     <p class="privacy">Our Privacy Policy is listed on pp.html. By searching anything, you agree to these terms.</p>
 </body>
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const overlay = document.querySelector('.overlay');
+            const topOverlay = document.querySelector('.top-overlay');
+            const modals = document.querySelectorAll('.modal');
+
+            function openModal(modalId) {
+                document.getElementById(modalId).classList.add('active');
+                overlay.classList.add('active');
+                topOverlay.classList.add('active');
+            }
+
+            function closeModal() {
+                modals.forEach(modal => modal.classList.remove('active'));
+                overlay.classList.remove('active');
+                topOverlay.classList.remove('active');
+            }
+
+            document.querySelector('.weathera').addEventListener('click', function (e) {
+                e.preventDefault();
+                openModal('weather-modal');
+            });
+
+            document.querySelector('.creditsa').addEventListener('click', function (e) {
+                e.preventDefault();
+                openModal('credits-modal');
+            });
+
+            document.querySelector('.abouta').addEventListener('click', function (e) {
+                e.preventDefault();
+                openModal('about-modal');
+            });
+
+            document.querySelectorAll('.close-btn').forEach(btn => {
+                btn.addEventListener('click', closeModal);
+            });
+
+            overlay.addEventListener('click', closeModal);
+            topOverlay.addEventListener('click', closeModal);
+        });
+    </script>
 </html>
