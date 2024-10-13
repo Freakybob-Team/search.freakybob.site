@@ -192,6 +192,15 @@
         button:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
+                #clock {
+            position: absolute; 
+            left: 50%;
+            transform: translateX(-50%); 
+            height: 30px; 
+            display: flex;
+            align-items: center; 
+            padding-right: 30px;
+        }
     </style>
 </head>
 <body>
@@ -200,6 +209,7 @@
         <a href="https://videos.freakybob.site" class="textnavbar">Videos</a>
         <a href="https://blog.freakybob.site" class="textnavbar">Blog</a>
         <a href="https://github.com/Freakybob-Team" class="textnavbar">Github</a>
+                   <div id="clock" class="clock"></div>
     </div>
     <div class="overlay"></div>
     <div class="top-overlay"></div>
@@ -213,6 +223,7 @@
     <div id="credits-modal" class="modal">
         <h2>Credits</h2>
         <p>Background image: scblurr on Wallpapers.com</p>
+        <p>Background image 2: unknown (make an issue on github)</p>
         <button class="close-btn">Close</button>
     </div>
 
@@ -251,6 +262,17 @@ const backgrounds = [
 ];
 
 let currentIndex = 0; 
+
+            function updateClock() {
+    const now = new Date();
+    const options = { hour: 'numeric', minute: 'numeric', hour12: true };
+    const timeString = now.toLocaleString('en-US', options);
+    document.getElementById('clock').textContent = timeString;
+}
+
+updateClock();
+setInterval(updateClock, 60000);
+
 
 function setBackground(index) {
     body.style.backgroundImage = `url('${backgrounds[index]}')`;
