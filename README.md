@@ -5,9 +5,10 @@ The website is powered by google which makes it easy to find anything! You can s
 
 The website is still being updated to make it more easy and comforting for you to use!
 
-*this was originaly made for freakybrowse which was discontinued.*
+*this was originaly made for freakybrowser which was discontinued.*
 
 <img src="images/screenshots/2024-10-12.png">
 <img src="images/screenshots/ 2024-10-122.png">
 <img src="images/screenshots/2024-10-122.png">
 
+-# Note that I am very eepy right now
