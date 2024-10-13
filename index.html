@@ -170,6 +170,28 @@
         .weathera:hover, .creditsa:hover, .abouta:hover {
             text-decoration: underline;
         }
+                .button-container {
+            z-index: 2;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        button {
+            padding: 5px 20px;
+            margin: 5px;
+            z-index: 2;
+            background-color: rgb(29, 29, 29);
+            color: white;
+            border: none;
+            cursor: pointer;
+            bottom: 0;
+            right: 0;
+        }
+
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
 <body>
@@ -212,10 +234,40 @@
         <a href="#credits" class="creditsa">Credits</a>
         <a href="#about" class="abouta">About</a>
     </div>
-
+    <div class="button-container">
+        <button id="prev-button"><</button>
+        <button id="next-button">></button>
+    </div>
     <p class="privacy">Our Privacy Policy is listed on pp.html. By searching anything, you agree to these terms.</p>
 </body>
         <script>
+                    const body = document.body;
+
+
+const backgrounds = [
+    "bg.png",
+    "idk.jpg",
+    "ocean.jpg"
+];
+
+let currentIndex = 0; 
+
+function setBackground(index) {
+    body.style.backgroundImage = `url('${backgrounds[index]}')`;
+}
+
+document.getElementById('next-button').addEventListener('click', function() {
+    currentIndex = (currentIndex + 1) % backgrounds.length;
+    setBackground(currentIndex);
+});
+
+document.getElementById('prev-button').addEventListener('click', function() {
+    currentIndex = (currentIndex - 1 + backgrounds.length) % backgrounds.length; 
+    setBackground(currentIndex);
+});
+
+setBackground(currentIndex);
+            
         document.addEventListener('DOMContentLoaded', function () {
             const overlay = document.querySelector('.overlay');
             const topOverlay = document.querySelector('.top-overlay');
