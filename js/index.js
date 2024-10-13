@@ -1,3 +1,7 @@
+// code by the Freakybob Team
+// 10/13/2024
+// Please leave this note in here if you are using this code in your project!
+// ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
 const body = document.body;
 const backgrounds = [
     "bg.png",
