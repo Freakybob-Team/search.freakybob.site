@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreakyAccounts</title>
+    <style>
+        * {
+            font-family: "Noto Sans", sans-serif;
+        }
+        p, h2, h1, label {
+            color: white
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body bgcolor="black">
+    <header>
+        <h1>One account. All of Freakybob.</h1>
+    </header>
+    <h2>Introducing FreakyAccounts. The only account system made for You.</h2>
+    <img src="default.png">
+    <form onsubmit="saveCookie(); return false;">
+        <label for="first">Username:</label>
+<input type="text" id="first" name="first" 
+    placeholder="Username" required>
+    <input type="submit" value="Submit" />
+    </form>
+    <footer>
+        <p>FreakyAccounts are not real accounts. They are not stored in a database. Any other user may have the same username as you. This will only be used as your username across Freakybob services.</p>
+    </footer>
+    <script>
+        function saveCookie() {
+            const username = document.getElementById('first').value
+            document.cookie = "username='+username+", "domain=*.freakybob.site"
+            console.log(document.cookie)
+        }
+    </script>
+</body>
+</html>
