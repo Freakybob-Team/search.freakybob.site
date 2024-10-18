@@ -4,9 +4,9 @@
 // ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
 const body = document.body;
 const backgrounds = [
-    "bg.png",
-    "idk.jpg",
-    "ocean.jpg"
+    "images/bg.png",
+    "images/idk.jpg",
+    "images/ocean.jpg"
 ];
 
 let currentIndex = 0;
