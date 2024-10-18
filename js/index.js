@@ -1,5 +1,5 @@
 // code by the Freakybob Team
-// 10/13/2024
+// 10/17/2024
 // Please leave this note in here if you are using this code in your project!
 // ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
 const body = document.body;
@@ -300,3 +300,42 @@ setBackground(currentIndex);
 
        
         adjustModalHeight();
+        function getUsername() {
+    const savedName = localStorage.getItem('username') || 'User';
+    document.getElementById('user-name').textContent = savedName;
+}
+
+document.getElementById('change-name-button').addEventListener('click', () => {
+ 
+    const nameInputDiv = document.getElementById('change-name-input');
+    nameInputDiv.style.display = 'block';
+    const nameInput = document.getElementById('new-username');
+    
+    
+    nameInput.value = localStorage.getItem('username') || 'User';
+    nameInput.focus();
+    
+    
+    nameInput.addEventListener('blur', saveUsername);
+    
+ 
+    nameInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            saveUsername();
+            nameInput.blur();
+        }
+    });
+});
+
+function saveUsername() {
+    const newName = document.getElementById('new-username').value.trim();
+    
+    if (newName) {
+        
+        localStorage.setItem('username', newName);
+        document.getElementById('user-name').textContent = newName;
+    }
+
+    
+    document.getElementById('change-name-input').style.display = 'none';
+}
