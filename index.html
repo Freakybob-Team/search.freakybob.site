@@ -10,20 +10,19 @@
 <meta content="Placeholder" property="og:image" />
 <meta content="#006b79" data-react-helmet="true" name="theme-color" />
  <link rel="icon" type="image/x-icon" href="logo.ico">
- <link rel="stylesheet" href="css/index.css">    
+<link rel="stylesheet" href="css/index.css">
 </head>
 <body onload="getUsername()">
-
-    <div class="menu">
-        <div id="username">
+        <div class="menu">
+            <div id="username">
+                Welcome, <span id="user-name"></span>!
+            </div>
+            <a href="https://freakybob.site">Freakybob.site</a>
+            <a href="https://videos.freakybob.site" class="textnavbar">Videos</a>
+            <a href="https://blog.freakybob.site" class="textnavbar">Blog</a>
+            <a href="https://github.com/Freakybob-Team" class="textnavbar">GitHub</a>
+            <div id="clock" class="clock"></div>
         </div>
-        <a href="https://freakybob.site">Freakybob.site</a>
-        <a href="https://videos.freakybob.site" class="textnavbar">Videos</a>
-        <a href="https://blog.freakybob.site" class="textnavbar">Blog</a>
-        <a href="https://github.com/Freakybob-Team" class="textnavbar">GitHub</a>
-        <div id="clock" class="clock"></div>
-    </div>
-    <marquee>We have updated our <a href="pp">Privacy Policy</a>. By continuing to use this site, you agree to the new terms.</marquee>
 
     <div class="overlay"></div>
     <div class="top-overlay"></div>
@@ -64,6 +63,10 @@
      <br>
      <h2>Configurations</h2>
      <p>No items!</p>
+     <button id="change-name-button">Change Name</button> 
+     <div id="change-name-input" style="display: none;">
+        <input type="text" id="new-username" placeholder="Enter your name">
+    </div>
         <button class="close-btn">Close</button>
     </div>
 
@@ -91,13 +94,6 @@
     <script src="js/index.js"></script>
 <!--I absulutly cooked at the weather stuff. Everyone should now gibe me a cookie cause I am fatass! -Squirrel-->
 <!-- here, take it! 🍪 - wish-->
- <script>
-           function getUsername() {
-           let user = document.cookie;
-           username.innerHTML += "+"
-           username.innerHTML += user
-       }
- </script>
-</body>
+    </body>
 </html>
 
