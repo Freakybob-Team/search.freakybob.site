@@ -4,7 +4,7 @@
 // ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
 const body = document.body;
 const backgrounds = [
-    "images/bg.png",
+    "bg.png",
     "images/idk.jpg",
     "images/ocean.jpg"
 ];
