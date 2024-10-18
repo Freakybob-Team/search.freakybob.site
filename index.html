@@ -12,9 +12,11 @@
  <link rel="icon" type="image/x-icon" href="logo.ico">
  <link rel="stylesheet" href="css/index.css">    
 </head>
-<body>
+<body onload="getUsername()">
 
     <div class="menu">
+        <div id="username">
+        </div>
         <a href="https://freakybob.site">Freakybob.site</a>
         <a href="https://videos.freakybob.site" class="textnavbar">Videos</a>
         <a href="https://blog.freakybob.site" class="textnavbar">Blog</a>
@@ -89,6 +91,13 @@
     <script src="js/index.js"></script>
 <!--I absulutly cooked at the weather stuff. Everyone should now gibe me a cookie cause I am fatass! -Squirrel-->
 <!-- here, take it! 🍪 - wish-->
+ <script>
+           function getUsername() {
+           let user = document.cookie;
+           username.innerHTML += "+"
+           username.innerHTML += user
+       }
+ </script>
 </body>
 </html>
 
