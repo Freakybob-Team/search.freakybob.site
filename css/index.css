@@ -252,16 +252,19 @@ body {
 #weather-modal .weather-info {
     margin-top: 20px;
     color: #fff;
+    text-align: center;
 }
 
 #weather-modal .weather-info h2 {
     font-size: 24px;
     margin-bottom: 10px;
+     text-align: center;
 }
 
 #weather-modal .weather-info p {
     font-size: 16px;
     margin: 5px 0;
+     text-align: center;
 }
 
 #weather-modal .error {
@@ -269,6 +272,7 @@ body {
     margin-top: 10px;
     font-size: 16px;
     display: none;
+     text-align: center;
 }
 
 #weather-modal .loading {
@@ -276,6 +280,7 @@ body {
     font-size: 16px;
     color: #007BFF;
     display: none;
+    text-align: center;
 }
 
 #weather-modal .weather-icon {
