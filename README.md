@@ -5,13 +5,14 @@ The website is powered by google which makes it easy to find anything! You can s
 
 The website is still being updated to make it more easy and comforting for you to use!
 
-# Update 1.4
-- Added full weather capabilities, as well as a basic mobile website.
+# Update 1.5
+- Added usernames! You can change the name in the about button!
 
-*this was originaly made for freakybrowser which was discontinued.*
+*This website is used for FreakyBrowse but you can use it without FreakyBrowse!*
 
-<img src="images/screenshots/2024-10-12.png">
-<img src="images/screenshots/ 2024-10-122.png">
-<img src="images/screenshots/2024-10-122.png">
+<img src="images/screenshots/Screenshot 2024-10-19 234239.png">
+<img src="images/screenshots/Screenshot 2024-10-20 002828.png">
 
--# Note that I am very eepy right now
+# Note that I am very eepy right now
+
+# Note that I am also very eepy rn (10/20/24 12:33 AM)
