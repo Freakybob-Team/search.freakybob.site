@@ -1,12 +1,14 @@
 // code by the Freakybob Team
-// 10/17/2024
+// 10/20/2024
 // Please leave this note in here if you are using this code in your project!
 // ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
 const body = document.body;
 const backgrounds = [
     "images/bg.png",
     "images/idk.jpg",
-    "images/ocean.jpg"
+    "images/ocean.jpg",
+    "images/Rainy Street.jpg",
+    "images/pwetty colors.jpg"
 ];
 
 let currentIndex = 0;
