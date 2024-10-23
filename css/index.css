@@ -236,7 +236,9 @@ body {
     margin-top: 10px;
     margin-right: 10px;
 }
-
+#weather-modal button#searchButton {
+    margin-left: 140px;
+}
 #weather-modal button:hover {
     background-color: #0056b3;
 }
@@ -343,6 +345,9 @@ marquee {
     text-align: center;
     line-height: 30px;
 }
+#weathercredit {
+    text-align: center;
+}
 @media (max-width: 600px) {
     
 
@@ -370,7 +375,33 @@ marquee {
     #weather-modal .loading {
         font-size: 14px;
     }
+#weather-modal button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+#weather-modal button#searchButton {
+    margin-left: 97px;
+}
+#weather-modal button:hover {
+    background-color: #0056b3;
+}
 
+#weather-modal button#geoButton {
+    background-color: #28a745;
+    margin-left: 63px;
+}
+
+#weather-modal button#geoButton:hover {
+    background-color: #1e7e34;
+}
     .search-box {
         width: 90%; 
     }
