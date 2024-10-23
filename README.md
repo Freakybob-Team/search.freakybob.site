@@ -1,5 +1,5 @@
 # FreakySearch
-**search.freakybob.site** is a simple browser inside browser. It has a nice and easy look that makes the user enjoy thier time on the website.
+**search.freakybob.site** is a simple browser inside browser. It has a nice and easy look that makes the user enjoy their time on the website.
 
 The website is powered by google which makes it easy to find anything! You can search up images, websites and anything!
 
