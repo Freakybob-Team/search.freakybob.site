@@ -9,7 +9,7 @@
 <meta content="A simple 'browser inside a browser'! It has many features like searching, weather and much more!" property="og:description" />
 <meta content="Placeholder" property="og:image" />
 <meta content="#006b79" data-react-helmet="true" name="theme-color" />
- <link rel="icon" type="image/x-icon" href="images/ico/logo.ico">
+ <link rel="icon" type="image/x-icon" href="../images/ico/logo.ico"> <!-- fixed by mpax235 #3 -->
 <style>
  * {
     box-sizing: border-box;
@@ -490,8 +490,8 @@ marquee {
   
     <div id="about-modal" class="modal">
         <h2>About</h2>
-        <p>FreakySearch 1.4</p>
-        <p>Last revision date: October 13th, 2024</p>
+        <p>FreakySearch 1.5</p>
+        <p>Last revision date: October 26th, 2024</p>
      <br>
      <h2>Configurations</h2>
      <p>No items!</p>
@@ -502,8 +502,8 @@ marquee {
         <button class="close-btn">Close</button>
     </div>
 
-    
-    <img src="logo.webp" alt="FreakySearch Logo" id="logo">
+    <!-- fixed by mpax235 #2 --> 
+    <img src="../logo.webp" alt="FreakySearch Logo" id="logo">
 
     
     <div class="search-box">
@@ -530,9 +530,10 @@ marquee {
 // ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
 const body = document.body;
 const backgrounds = [
-    "images/bg.png",
-    "images/idk.jpg",
-    "images/ocean.jpg"
+    // fixed by mpax235 #1
+    "../images/bg.png",
+    "../images/idk.jpg",
+    "../images/ocean.jpg"
 ];
 
 let currentIndex = 0;
