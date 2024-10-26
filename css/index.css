@@ -291,6 +291,9 @@ body {
     display: block;
     margin: 10px auto;
 }
+#weather-modal #weathercredit a {
+    color: aqua;
+}
 #clock {
     position: absolute; 
     left: 50%;
