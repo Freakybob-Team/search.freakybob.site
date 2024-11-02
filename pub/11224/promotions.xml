@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Promotions>
+<Promotion id="8df54a79" title="Freakybob.site" description="See the devs behind freakybob.site! Check out the image gallery! Listen to Spongebob music! More activities!" url="https://freakybob.site" image_url="https://freakybob.site/images/FreakybobDOTsite.png" is_regex="false" enabled="true" queries="freakybob,freakbob">
+<Query>freakybob</Query>
+<Query>freakbob</Query>
+</Promotion>
+<Promotion id="9c5f4d8e" title="Freakybob Team on GitHub" description="You've reached freakybob.site, a team and community dedicated to memes. 🧽" url="https://github.com/Freakybob-Team" image_url="https://avatars.githubusercontent.com/u/180054882?s=200&amp;v=4" is_regex="false" enabled="true" queries="GitHub">
+<Query>GitHub</Query>
+</Promotion>
+</Promotions>
