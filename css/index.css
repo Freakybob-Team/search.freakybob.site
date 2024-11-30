@@ -351,6 +351,45 @@ marquee {
 #weathercredit {
     text-align: center;
 }
+.gcse-searchbox, .gsc-control-cse, .gsc-search-box, .gsc-search-button input {
+        background-color: #333 !important;
+        color: #fff !important;
+    }
+    .gsc-search-button input {
+        background-color: #555 !important;
+        color: #fff !important;
+    }
+    .gsc-input {
+        background-color: #333 !important;
+        color: #fff !important;
+        border-radius: 7px;
+        
+    }
+    .gsc-webResult .gsc-result {
+        background-color: #333 !important;
+        border: 1px solid #444 !important;
+    }
+    .gsc-webResult .gsc-result .gsc-title, .gsc-webResult .gsc-result .gsc-url, .gsc-webResult .gsc-result .gsc-description {
+        color: #ddd !important;
+    }
+    .gsc-webResult .gsc-result:hover {
+        background-color: #222 !important;
+    }
+    .gsc-webResult .gsc-result .gsc-title a {
+        color: #ffcc00 !important;
+    }
+    .gsc-webResult .gsc-result .gsc-url {
+        color: #ccc !important;
+    }
+    .gsc-webResult .gsc-result .gsc-description {
+        color: #aaa !important;
+    }
+    .gsc-webResult .gsc-result .gsc-thumbnail img {
+        border: 2px solid #555 !important;
+    }
+    .gsc-results-wrapper-overlay {
+        background-color: rgba(0, 0, 0, 0.8) !important;
+    }
 @media (max-width: 600px) {
     
 
