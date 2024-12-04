@@ -151,7 +151,6 @@ body {
 .gcse-searchbox, .gsc-control-cse, .gsc-search-box, .gsc-search-button input {
     background-color: #444 !important;
     color: #fff !important;
-    border-radius: 99px;
 }
 
 .gsc-search-button input {
