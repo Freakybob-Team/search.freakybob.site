@@ -2,6 +2,7 @@
 // 10/25/2024
 // Please leave this note in here if you are using this code in your project!
 // ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
+// no -names
 const body = document.body;
 const backgrounds = [
     "images/bg.png",
