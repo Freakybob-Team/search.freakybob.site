@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -25,18 +27,21 @@ body {
 
 
 .menu {
-    background-color: rgb(46, 46, 46);
-    width: 100%;
-    height: 30px;
+    background-color: rgba(46, 46, 46, 0.3);
+    width: 98%;
+    height: 50px;
     position: fixed; 
-    top: 0;
-    left: 0;
-    z-index: 3; 
+    top: 14px;
+    left: 10;
+    z-index: 99; 
     display: flex; 
     align-items: center;
     color: white;
     padding-left: 30px;
-    font-size: 14px;
+    font-size: 17px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    font-family: "Afacad Flux", sans-serif;
 }
 
 .textnavbar {
@@ -46,10 +51,12 @@ body {
 .menu a, .menu a:link, .menu a:visited {
     text-decoration: none;
     color: white;
+    transition: 0.3s;
 }
 
 .menu a:hover {
     text-decoration: underline;
+    font-size: 20px;
 }
 
 
@@ -93,13 +100,14 @@ body {
     max-width: 600px;
     max-height: 90vh;
     padding: 20px 30px;
-    background-color: rgb(29, 29, 29);
+    background-color: rgba(29, 29, 29, 0.5);
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
     z-index: 101;
     text-align: left;
     color: white;
     overflow-y: auto;
     border-radius: 10px;
+    backdrop-filter: blur(10px);
 }
 
 .modal.active {
@@ -124,11 +132,11 @@ body {
 
 
 #logo {
-    width: 140px;
+    width: 120px;
     height: auto;
     margin-bottom: 40px;
     z-index: 2;
-    filter: drop-shadow(5px 5px 15px rgba(23, 221, 205, 1));
+    filter: drop-shadow(5px 5px 15px rgb(15, 44, 138));
 }
 
 
@@ -143,11 +151,13 @@ body {
 .gcse-searchbox, .gsc-control-cse, .gsc-search-box, .gsc-search-button input {
     background-color: #444 !important;
     color: #fff !important;
+    border-radius: 99px;
 }
 
 .gsc-search-button input {
     background-color: #555 !important;
     color: #fff !important;
+
 }
 
 .gsc-input {
@@ -342,10 +352,12 @@ table.gsc-completion-container {
     text-decoration: none;
     color: white;
     font-size: 16px;
+    transition: 0.3s;
 }
 
 .weathera:hover, .creditsa:hover, .abouta:hover {
     text-decoration: underline;
+    font-size: 18px;
 }
 
 
@@ -447,12 +459,15 @@ table.gsc-completion-container {
 }
 #clock {
     position: absolute; 
-    left: 50%;
-    transform: translateX(-50%); 
+    right: 0;
     height: 30px; 
     display: flex;
     align-items: center; 
     padding-right: 30px;
+    transition: 0.3s;
+}
+#clock:hover {
+    font-size: 20px;
 }
 .button-container {
     z-index: 2;
@@ -470,34 +485,24 @@ button {
     cursor: pointer;
     bottom: 0;
     right: 0;
+    border-radius: 70px;
 }
 
 button:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
-marquee {
-    z-index: 100;
-    position: fixed;
+#username {
+    z-index: 98;
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 30px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     color: white;
     text-align: center;
     line-height: 30px;
-}
-#username {
-    z-index: 100;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 30px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    text-align: center;
-    line-height: 30px;
+    backdrop-filter: blur(5px);
 }
 #weathercredit {
     text-align: center;
