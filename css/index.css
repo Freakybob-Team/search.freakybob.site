@@ -44,7 +44,15 @@ body {
     font-family: "Afacad Flux", sans-serif;
     filter: drop-shadow(2px 2px 6px rgba(200, 200, 200, 0.5));
 }
-
+.line {
+    border-radius: 8px;
+    width: 2px;
+    height: 40px;
+    background-color: #414341;
+    margin-left: 13px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .textnavbar {
     padding-left: 20px;
 }
