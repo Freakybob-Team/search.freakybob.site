@@ -375,9 +375,6 @@ button:hover {
 #weather-modal button#geoButton:hover {
     background-color: #1e7e34;
 }
-    .search-box {
-        width: 90%; 
-    }
 
     .options {
         flex-direction: row;
@@ -412,17 +409,6 @@ button:hover {
         font-size: 12px; 
         margin-left: 130px; /* css comments css comments css comments css comments */
     }
-
-    .gcse-search input.gsc-input {
-        font-size: 16px;
-        padding: 10px 15px; 
-    }
-
-    .gcse-search input.gsc-search-button {
-        font-size: 16px; 
-        padding: 10px 15px; 
-    }
-
   
     .modal {
         width: 95%; 
