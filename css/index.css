@@ -25,6 +25,11 @@ body {
     overflow-x: hidden;
 }
 
+#___gcse_0 {
+    z-index: 100;
+    width: 400px;
+    margin-bottom: 20px;
+}
 
 .menu {
     background-color: rgba(46, 46, 46, 0.3);
