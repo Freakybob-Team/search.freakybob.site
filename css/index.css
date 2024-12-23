@@ -375,6 +375,20 @@ button:hover {
         color: rgb(13, 241, 230);
     }
 }
+#credits-modal a {
+    color: rgb(0, 255, 183);
+    text-decoration: none;
+}
+#credits-modal a:hover {
+    text-decoration: underline;
+}
+#credits-modal h2 {
+    color:rgb(13, 241, 230);
+}
+#credits-modal p {
+    margin-bottom: 4px;
+    color:rgb(172, 75, 221)
+}
 @media (max-width: 600px) {
     
 
