@@ -1,5 +1,5 @@
 // code by the Freakybob Team
-// 10/25/2024
+// 12/22/2024
 // Please leave this note in here if you are using this code in your project!
 // ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
 // no -names
@@ -59,6 +59,19 @@ function changeBackground() {
 updateClock();
 setInterval(updateClock, 60000);
 
+function updateDate() {
+    const now = new Date();
+    const month = now.getMonth() + 1;
+    const day = now.getDate();
+    const year = now.getFullYear().toString().substring(2, 4);
+    const dateString = `${month}/${day}/${year}`;
+    document.getElementById('date').textContent = dateString;
+}
+
+setInterval(updateDate, 60000);
+
+
+updateDate();
 
 function setBackground(index) {
     body.style.backgroundImage = `url('${backgrounds[index]}')`;
