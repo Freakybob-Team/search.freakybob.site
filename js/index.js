@@ -12,7 +12,9 @@ const backgrounds = [
     "images/pwetty colors.jpg",
     "images/pwetttyyy.jpg",
     "images/pexels-chetanvlad-1529360.jpg",
-    "images/pexels-veeterzy-39811.jpg"
+    "images/pexels-veeterzy-39811.jpg",
+    "images/storm_beach.jpg",
+    "images/tree_road.jpg"
 ];
 
 let currentIndex = 0;
