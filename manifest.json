@@ -1,0 +1,17 @@
+{
+    "lang": "en-us",
+    "name": "FreakySearch",
+    "short_name": "FreakySearch",
+    "description": "Peak browsing",
+    "start_url": "/",
+    "background_color": "#2f3d58",
+    "theme_color": "#2f3d58",
+    "orientation": "any",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "/logo.svg",
+            "sizes": "512x512"
+        }
+    ]
+}
