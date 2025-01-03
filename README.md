@@ -5,12 +5,14 @@ The website is powered by google which makes it easy to find anything! You can s
 
 The website is still being updated to make it more easy and comforting for you to use!
 
-# Update 1.8
-- Minor UI changes
+# Update 1.9
+- Color and Colors
+- the date!!!!
 
 *This website is used for FreakyBrowse but you can use it without FreakyBrowse!*
 
-![image](image.png)  
+![image](https://github.com/user-attachments/assets/2d779011-43f8-4488-80c5-75b51b427dd0)
+
 
 
 
